@@ -25,6 +25,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
+	xpv1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 	"github.com/crossplane/crossplane-runtime/pkg/connection"
 	"github.com/crossplane/crossplane-runtime/pkg/controller"
 	"github.com/crossplane/crossplane-runtime/pkg/event"
@@ -141,6 +142,8 @@ func (c *external) Observe(ctx context.Context, mg resource.Managed) (managed.Ex
 	// Faking Lat & Lng Observation
 	cr.Status.AtProvider.Lat = "53.99429"
 	cr.Status.AtProvider.Lng = "1.35469"
+	// Ready Status
+	cr.SetConditions(xpv1.Available())
 
 	return managed.ExternalObservation{
 		// Return false when the external resource does not exist. This lets

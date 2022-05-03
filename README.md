@@ -39,7 +39,6 @@ kubectl patch vesselgpstypes.sample.gps.crossplane.io vessel-imo-9259501 -p '{"m
 ```
 
 ## TODOs
-* Why is the resource not ready?
 * Why do I need to force delete?
 * Build and publish provider package
 * More dummy data
