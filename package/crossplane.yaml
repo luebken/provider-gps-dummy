@@ -11,4 +11,4 @@ metadata:
 
 spec:
   controller:
-    image: DOCKER_REGISTRY/provider-gps-dummy-controller:VERSION
+    image: luebken/provider-gps-dummy-controller:VERSION
