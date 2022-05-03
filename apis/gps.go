@@ -20,8 +20,8 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	samplev1alpha1 "github.com/crossplane/provider-gps-dummy/apis/sample/v1alpha1"
-	gpsv1alpha1 "github.com/crossplane/provider-gps-dummy/apis/v1alpha1"
+	samplev1alpha1 "github.com/luebken/provider-gps-dummy/apis/sample/v1alpha1"
+	gpsv1alpha1 "github.com/luebken/provider-gps-dummy/apis/v1alpha1"
 )
 
 func init() {

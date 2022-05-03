@@ -1,4 +1,4 @@
-module github.com/crossplane/provider-gps-dummy
+module github.com/luebken/provider-gps-dummy
 
 go 1.17
 

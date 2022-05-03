@@ -33,9 +33,9 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/reconciler/managed"
 	"github.com/crossplane/crossplane-runtime/pkg/resource"
 
-	"github.com/crossplane/provider-gps-dummy/apis/sample/v1alpha1"
-	apisv1alpha1 "github.com/crossplane/provider-gps-dummy/apis/v1alpha1"
-	"github.com/crossplane/provider-gps-dummy/internal/controller/features"
+	"github.com/luebken/provider-gps-dummy/apis/sample/v1alpha1"
+	apisv1alpha1 "github.com/luebken/provider-gps-dummy/apis/v1alpha1"
+	"github.com/luebken/provider-gps-dummy/internal/controller/features"
 )
 
 const (

@@ -36,10 +36,10 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/ratelimiter"
 	"github.com/crossplane/crossplane-runtime/pkg/resource"
 
-	"github.com/crossplane/provider-gps-dummy/apis"
-	"github.com/crossplane/provider-gps-dummy/apis/v1alpha1"
-	template "github.com/crossplane/provider-gps-dummy/internal/controller"
-	"github.com/crossplane/provider-gps-dummy/internal/controller/features"
+	"github.com/luebken/provider-gps-dummy/apis"
+	"github.com/luebken/provider-gps-dummy/apis/v1alpha1"
+	template "github.com/luebken/provider-gps-dummy/internal/controller"
+	"github.com/luebken/provider-gps-dummy/internal/controller/features"
 )
 
 func main() {

@@ -20,8 +20,8 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/controller"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	"github.com/crossplane/provider-gps-dummy/internal/controller/config"
-	"github.com/crossplane/provider-gps-dummy/internal/controller/vesselgpstype"
+	"github.com/luebken/provider-gps-dummy/internal/controller/config"
+	"github.com/luebken/provider-gps-dummy/internal/controller/vesselgpstype"
 )
 
 // Setup creates all Template controllers with the supplied logger and adds them to
