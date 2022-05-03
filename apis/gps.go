@@ -21,13 +21,13 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 
 	samplev1alpha1 "github.com/crossplane/provider-gps-dummy/apis/sample/v1alpha1"
-	templatev1alpha1 "github.com/crossplane/provider-gps-dummy/apis/v1alpha1"
+	gpsv1alpha1 "github.com/crossplane/provider-gps-dummy/apis/v1alpha1"
 )
 
 func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
-		templatev1alpha1.SchemeBuilder.AddToScheme,
+		gpsv1alpha1.SchemeBuilder.AddToScheme,
 		samplev1alpha1.SchemeBuilder.AddToScheme,
 	)
 }

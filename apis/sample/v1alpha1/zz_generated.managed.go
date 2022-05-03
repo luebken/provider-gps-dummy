@@ -19,68 +19,68 @@ package v1alpha1
 
 import xpv1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 
-// GetCondition of this MyType.
-func (mg *MyType) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this VesselGpsType.
+func (mg *VesselGpsType) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this MyType.
-func (mg *MyType) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this VesselGpsType.
+func (mg *VesselGpsType) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetProviderConfigReference of this MyType.
-func (mg *MyType) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this VesselGpsType.
+func (mg *VesselGpsType) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
 /*
-GetProviderReference of this MyType.
+GetProviderReference of this VesselGpsType.
 Deprecated: Use GetProviderConfigReference.
 */
-func (mg *MyType) GetProviderReference() *xpv1.Reference {
+func (mg *VesselGpsType) GetProviderReference() *xpv1.Reference {
 	return mg.Spec.ProviderReference
 }
 
-// GetPublishConnectionDetailsTo of this MyType.
-func (mg *MyType) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this VesselGpsType.
+func (mg *VesselGpsType) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this MyType.
-func (mg *MyType) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this VesselGpsType.
+func (mg *VesselGpsType) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this MyType.
-func (mg *MyType) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this VesselGpsType.
+func (mg *VesselGpsType) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this MyType.
-func (mg *MyType) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this VesselGpsType.
+func (mg *VesselGpsType) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetProviderConfigReference of this MyType.
-func (mg *MyType) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this VesselGpsType.
+func (mg *VesselGpsType) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
 /*
-SetProviderReference of this MyType.
+SetProviderReference of this VesselGpsType.
 Deprecated: Use SetProviderConfigReference.
 */
-func (mg *MyType) SetProviderReference(r *xpv1.Reference) {
+func (mg *VesselGpsType) SetProviderReference(r *xpv1.Reference) {
 	mg.Spec.ProviderReference = r
 }
 
-// SetPublishConnectionDetailsTo of this MyType.
-func (mg *MyType) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this VesselGpsType.
+func (mg *VesselGpsType) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this MyType.
-func (mg *MyType) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this VesselGpsType.
+func (mg *VesselGpsType) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }

@@ -5,18 +5,18 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: mytypes.sample.template.crossplane.io
+  name: vesselgpstypes.sample.gps.crossplane.io
 spec:
-  group: sample.template.crossplane.io
+  group: sample.gps.crossplane.io
   names:
     categories:
     - crossplane
     - managed
     - template
-    kind: MyType
-    listKind: MyTypeList
-    plural: mytypes
-    singular: mytype
+    kind: VesselGpsType
+    listKind: VesselGpsTypeList
+    plural: vesselgpstypes
+    singular: vesselgpstype
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -35,7 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: A MyType is an example API type.
+        description: A VesselGpsType is an example API type.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,7 +50,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: A MyTypeSpec defines the desired state of a MyType.
+            description: A VesselGpsTypeSpec defines the desired state of a MyType.
             properties:
               deletionPolicy:
                 default: Delete
@@ -62,12 +62,13 @@ spec:
                 - Delete
                 type: string
               forProvider:
-                description: MyTypeParameters are the configurable fields of a MyType.
+                description: VesselGpsTypeParameters are the configurable fields of
+                  a MyType.
                 properties:
-                  configurableField:
+                  imo:
                     type: string
                 required:
-                - configurableField
+                - imo
                 type: object
               providerConfigRef:
                 default:
@@ -166,12 +167,16 @@ spec:
             - forProvider
             type: object
           status:
-            description: A MyTypeStatus represents the observed state of a MyType.
+            description: A VesselGpsTypeStatus represents the observed state of a
+              MyType.
             properties:
               atProvider:
-                description: MyTypeObservation are the observable fields of a MyType.
+                description: VesselGpsTypeObservation are the observable fields of
+                  a MyType.
                 properties:
-                  observableField:
+                  lat:
+                    type: string
+                  lng:
                     type: string
                 type: object
               conditions:

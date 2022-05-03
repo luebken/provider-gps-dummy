@@ -1,25 +1,45 @@
 # provider-gps-dummy
 
-`provider-gps-dummy` is a minimal [Crossplane](https://crossplane.io/) Provider
-that is meant to be used as a template for implementing new Providers. It comes
-with the following features that are meant to be refactored:
-
-- A `ProviderConfig` type that only points to a credentials `Secret`.
-- A `MyType` resource type that serves as an example managed resource.
-- A managed resource controller that reconciles `MyType` objects and simply
-  prints their configuration in its `Observe` method.
+`provider-gps-dummy` is a dummy [Crossplane](https://crossplane.io/) provider providing fake GPS data for a vessel with a given IMO.
 
 ## Developing
 
-1. Use this repository as a template to create a new one.
-1. Find-and-replace `provider-gps-dummy` with your provider's name.
-1. Run `make` to initialize the "build" Make submodule we use for CI/CD.
-1. Run `make reviewable` to run code generation, linters, and tests.
-1. Replace `MyType` with your own managed resource implementation(s).
+Install CRDs:
+```
+# generate CRDs
+make generate
+# install CRDs
+kubectl apply -f package/crds/
+# check
+kubectl get crds | grep gps
+```
 
-Refer to Crossplane's [CONTRIBUTING.md] file for more information on how the
-Crossplane community prefers to work. The [Provider Development][provider-dev]
-guide may also be of use.
+Configure the Provider:
+```
+kubectl apply -f examples/provider/config.yaml
+```
 
-[CONTRIBUTING.md]: https://github.com/crossplane/crossplane/blob/master/CONTRIBUTING.md
-[provider-dev]: https://github.com/crossplane/crossplane/blob/master/docs/contributing/provider_development_guide.md
+Run the Provider Controller locally:
+```
+make run
+```
+
+Install example
+```
+kubectl create -f examples/sample/vesselgpstype-9259501.yaml
+```
+
+Delete Examples
+```
+# delete
+kubectl delete -f examples/sample/vesselgpstype-9259501.yaml
+
+# force delete
+kubectl patch vesselgpstypes.sample.gps.crossplane.io vessel-imo-9259501 -p '{"metadata":{"finalizers": []}}' --type=merg
+```
+
+## TODOs
+* Print column lat & lng
+* Why do I need to force delete?
+* Why is the resource not ready?
+* Build and publish provider package
