@@ -35,11 +35,12 @@ Delete Examples
 kubectl delete -f examples/sample/vesselgpstype-9259501.yaml
 
 # force delete
-kubectl patch vesselgpstypes.sample.gps.crossplane.io vessel-imo-9259501 -p '{"metadata":{"finalizers": []}}' --type=merg
+kubectl patch vesselgpstypes.sample.gps.crossplane.io vessel-imo-9259501 -p '{"metadata":{"finalizers": []}}' --type=merge
 ```
 
 ## TODOs
-* Print column lat & lng
-* Why do I need to force delete?
 * Why is the resource not ready?
+* Why do I need to force delete?
 * Build and publish provider package
+* More dummy data
+* delete storeconfig
