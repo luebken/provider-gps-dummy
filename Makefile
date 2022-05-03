@@ -3,7 +3,7 @@
 PROJECT_NAME := provider-gps-dummy
 PROJECT_REPO := github.com/luebken/$(PROJECT_NAME)
 
-PLATFORMS ?= linux_amd64 linux_arm64 darwin_arm64
+PLATFORMS ?= linux_amd64 linux_arm64
 -include build/makelib/common.mk
 
 # Setup Output
