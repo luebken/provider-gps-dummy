@@ -163,7 +163,11 @@ func (c *external) Observe(ctx context.Context, mg resource.Managed) (managed.Ex
 		// Return false when the external resource does not exist. This lets
 		// the managed resource reconciler know that it needs to call Create to
 		// (re)create the resource, or that it has successfully been deleted.
-		ResourceExists: true,
+
+		// Workaround for these type of read-only resources. Whenever a resource
+		// is requested for deletion a deletion timestamp is set. We don't need
+		// to delete the actual resource we just delete the MR.
+		ResourceExists: cr.DeletionTimestamp == nil,
 
 		// Return false when the external resource exists, but it not up to date
 		// with the desired managed resource state. This lets the managed
