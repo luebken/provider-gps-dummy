@@ -140,8 +140,22 @@ func (c *external) Observe(ctx context.Context, mg resource.Managed) (managed.Ex
 	fmt.Printf("Observing: %+v", cr)
 
 	// Faking Lat & Lng Observation
-	cr.Status.AtProvider.Lat = "53.99429"
-	cr.Status.AtProvider.Lng = "1.35469"
+	// In a non-dummy API this would actully use some API
+	// either public or on-prem on the vessel
+	imo := cr.Spec.ForProvider.IMO
+
+	switch imo {
+	case "9259501":
+		cr.Status.AtProvider.Lat = "53.66897"
+		cr.Status.AtProvider.Lng = "0.5932333"
+	case "9259513":
+		cr.Status.AtProvider.Lat = "51.23076"
+		cr.Status.AtProvider.Lng = "3.808072"
+	case "9457177":
+		cr.Status.AtProvider.Lat = "37.49811"
+		cr.Status.AtProvider.Lng = "15.09585"
+	}
+
 	// Ready Status
 	cr.SetConditions(xpv1.Available())
 
