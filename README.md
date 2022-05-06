@@ -37,17 +37,27 @@ kubectl patch vesselgpstypes.sample.gps.crossplane.io vessel-imo-9259501 -p '{"m
 ```
 
 ## Relase
+
+### Prerequisite
 * Set env.DOCKER_USR & env.DOCKER_PSW
 * Set env.AWS to dummy
 
+### Cut 
 * Run Github Action Tag
-* Run CI from main branch
+  https://github.com/luebken/provider-gps-dummy/actions/workflows/tag.yml
+  v0.1.4
+
+* Run CI from _main— branch
+  https://github.com/luebken/provider-gps-dummy/actions/workflows/ci.yml
+
+* Verify 
+  https://hub.docker.com/r/luebken/provider-gps-dummy/tags
 
 ## Notes
 * Fix: Permission: https://github.com/luebken/provider-gps-dummy/commit/0ef7a396e4d710df6c8a205a349cfad88f3ec25e
 * Fix: Test Integration https://github.com/luebken/provider-gps-dummy/commit/83d26617c14c96f7595f33669be3b0c7dd5fb530
 
 ## TODOs
-* Why do I need to force delete MRs?
-* Add more dummy data
+* Fix: Delete of MRs
+* rename provider from luebken-provider-gps-dummy to crossplane-provider-gps-dummy
 * Delete storeconfig
