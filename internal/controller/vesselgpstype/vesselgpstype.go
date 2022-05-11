@@ -152,8 +152,17 @@ func (c *external) Observe(ctx context.Context, mg resource.Managed) (managed.Ex
 		cr.Status.AtProvider.Lat = "51.23076"
 		cr.Status.AtProvider.Lng = "3.808072"
 	case "9457177":
-		cr.Status.AtProvider.Lat = "37.49811"
-		cr.Status.AtProvider.Lng = "15.09585"
+		cr.Status.AtProvider.Lat = "55.7158743"
+		cr.Status.AtProvider.Lng = "12.5890129"
+	case "9262089":
+		cr.Status.AtProvider.Lat = "57.69033"
+		cr.Status.AtProvider.Lng = "55.7158743"
+	case "9192129":
+		cr.Status.AtProvider.Lat = "50.97117"
+		cr.Status.AtProvider.Lng = "1.8665"
+	case "9157284":
+		cr.Status.AtProvider.Lat = "53.98062"
+		cr.Status.AtProvider.Lng = "8.46272"
 	}
 
 	// Ready Status
