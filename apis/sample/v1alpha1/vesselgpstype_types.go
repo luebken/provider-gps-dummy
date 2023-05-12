@@ -53,6 +53,7 @@ type VesselGpsTypeStatus struct {
 // A VesselGpsType is an example API type.
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
+// +kubebuilder:printcolumn:name="IMO",type="string",JSONPath=".spec.forProvider.imo"
 // +kubebuilder:printcolumn:name="LAT",type="string",JSONPath=".status.atProvider.lat"
 // +kubebuilder:printcolumn:name="LNG",type="string",JSONPath=".status.atProvider.lng"
 // +kubebuilder:subresource:status
